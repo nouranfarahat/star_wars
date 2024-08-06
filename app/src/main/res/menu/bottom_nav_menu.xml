@@ -9,10 +9,10 @@
         android:id="@+id/starshipsFragment"
         android:icon="@drawable/baseline_rocket_launch_24"
         android:title="@string/starships"/>
-    <item
+   <!-- <item
         android:id="@+id/favoriteFragment"
         android:icon="@drawable/baseline_favorite_24"
-        android:title="@string/favorite" />
+        android:title="@string/favorite" />-->
 
     <!-- Add more items for other destinations in your NavGraph -->
 </menu>
