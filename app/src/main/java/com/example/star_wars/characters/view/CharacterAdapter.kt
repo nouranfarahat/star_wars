@@ -8,7 +8,7 @@ import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.example.star_wars.R
 import com.example.star_wars.databinding.CharacterCardBinding
-import com.example.star_wars.model.Character
+import com.example.star_wars.model.charactermodel.Character
 
 class CharacterAdapter(var listener: OnCharacterClickListener)
     : ListAdapter<Character, CharacterAdapter.ViewHolder>(CharacterDiffUtil()) {

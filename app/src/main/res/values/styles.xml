@@ -1,0 +1,78 @@
+<!-- res/values/styles.xml -->
+<resources>
+
+    <!-- Base TextView Style -->
+    <style name="BaseTextView">
+        <item name="android:textColor">#000000</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <!-- Style for Labels -->
+    <style name="LabelTextView" parent="BaseTextView">
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">25dp</item>
+        <item name="android:textColor">#272E5A</item> <!-- Blue color -->
+    </style>
+
+    <!-- Style for Values -->
+    <style name="ValueTextView" parent="BaseTextView">
+        <item name="android:textSize">25dp</item>
+    </style>
+    <!-- Style for Value TextView -->
+    <style name="StarshipValueTextView" parent="BaseTextView">
+        <item name="android:textSize">16sp</item>
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginStart">8dp</item>
+        <item name="android:layout_marginEnd">8dp</item>
+        <item name="android:layout_marginTop">8dp</item>
+        <item name="android:layout_marginBottom">8dp</item>
+    </style>
+
+    <!-- Style for Character Name -->
+    <style name="CharacterNameTextView" parent="BaseTextView">
+        <item name="android:textSize">35dp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">#000000</item> <!-- black color -->
+    </style>
+    <!-- Base TextView Style -->
+    <style name="BaseCardTextView">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">#000000</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <!-- Style for Character Name -->
+    <style name="CharacterNameCardTextView" parent="BaseTextView">
+        <item name="android:textStyle">bold</item>
+        <item name="android:gravity">center</item>
+        <item name="android:layout_marginStart">5dp</item>
+        <item name="android:layout_marginEnd">5dp</item>
+        <item name="android:layout_marginTop">10dp</item>
+        <item name="android:layout_marginBottom">16dp</item>
+    </style>
+
+    <!-- Style for Button -->
+    <style name="MoreDetailsButton">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">15dp</item>
+        <item name="android:layout_marginStart">15dp</item>
+        <item name="android:layout_marginEnd">15dp</item>
+        <item name="android:layout_marginBottom">10dp</item>
+        <item name="backgroundTint">#272E5A</item>
+        <item name="android:textColor">#FFFFFF</item>
+        <item name="android:textSize">15dp</item>
+        <item name="android:textStyle">bold</item>
+
+
+
+
+    </style>
+
+
+
+
+</resources>

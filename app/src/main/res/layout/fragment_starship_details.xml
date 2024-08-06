@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="starship"
+            type="com.example.star_wars.model.starshipmodel.Starship" />
+
+    </data>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        app:cardCornerRadius="8dp"
+        app:cardElevation="4dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="16dp">
+
+            <!-- Starship Name -->
+            <TextView
+                android:id="@+id/starshipName"
+                style="@style/CharacterNameTextView"
+                android:text="@{starship.name}"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginBottom="16dp"/>
+
+            <!-- Separator -->
+            <View
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:background="#CCCCCC"
+                app:layout_constraintTop_toBottomOf="@id/starshipName"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginTop="30dp" />
+
+            <!-- Starship Model -->
+            <TextView
+                android:id="@+id/starshipModelLabel"
+                style="@style/LabelTextView"
+                android:text="Model:"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/starshipName"
+                android:layout_marginTop="30dp" />
+
+            <TextView
+                android:id="@+id/starshipModel"
+                style="@style/StarshipValueTextView"
+                android:text="@{starship.model}"
+                app:layout_constraintStart_toEndOf="@id/starshipModelLabel"
+                app:layout_constraintTop_toTopOf="@id/starshipModelLabel"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginStart="8dp" />
+
+            <!-- Separator -->
+            <View
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:background="#CCCCCC"
+                app:layout_constraintTop_toBottomOf="@id/starshipModelLabel"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginTop="30dp" />
+
+            <!-- Starship Manufacturer -->
+            <TextView
+                android:id="@+id/starshipManufacturerLabel"
+                style="@style/LabelTextView"
+                android:text="Manufacturer:"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/starshipModelLabel"
+                android:layout_marginTop="30dp" />
+
+            <TextView
+                android:id="@+id/starshipManufacturer"
+                style="@style/StarshipValueTextView"
+                android:text="@{starship.manufacturer}"
+                app:layout_constraintStart_toEndOf="@id/starshipManufacturerLabel"
+                app:layout_constraintTop_toTopOf="@id/starshipManufacturerLabel"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginStart="8dp" />
+
+            <!-- Separator -->
+            <View
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:background="#CCCCCC"
+                app:layout_constraintTop_toBottomOf="@id/starshipManufacturerLabel"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginTop="30dp" />
+
+            <!-- Starship Cost in Credits -->
+            <TextView
+                android:id="@+id/starshipCostLabel"
+                style="@style/LabelTextView"
+                android:text="Cost in Credits:"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/starshipManufacturerLabel"
+                android:layout_marginTop="30dp" />
+
+            <TextView
+                android:id="@+id/starshipCost"
+                style="@style/StarshipValueTextView"
+                android:text="@{starship.costInCredits}"
+                app:layout_constraintStart_toEndOf="@id/starshipCostLabel"
+                app:layout_constraintTop_toTopOf="@id/starshipCostLabel"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginStart="8dp" />
+
+            <!-- Separator -->
+            <View
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:background="#CCCCCC"
+                app:layout_constraintTop_toBottomOf="@id/starshipCostLabel"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginTop="30dp" />
+
+            <!-- Starship Length -->
+            <TextView
+                android:id="@+id/starshipLengthLabel"
+                style="@style/LabelTextView"
+                android:text="Length:"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/starshipCostLabel"
+                android:layout_marginTop="30dp" />
+
+            <TextView
+                android:id="@+id/starshipLength"
+                style="@style/StarshipValueTextView"
+                android:text="@{starship.length}"
+                app:layout_constraintStart_toEndOf="@id/starshipLengthLabel"
+                app:layout_constraintTop_toTopOf="@id/starshipLengthLabel"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginStart="8dp" />
+
+            <!-- Separator -->
+            <View
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:background="#CCCCCC"
+                app:layout_constraintTop_toBottomOf="@id/starshipLengthLabel"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginTop="30dp" />
+
+            <!-- Starship Crew -->
+            <TextView
+                android:id="@+id/starshipCrewLabel"
+                style="@style/LabelTextView"
+                android:text="Crew:"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/starshipLengthLabel"
+                android:layout_marginTop="30dp" />
+
+            <TextView
+                android:id="@+id/starshipCrew"
+                style="@style/StarshipValueTextView"
+                android:text="@{starship.crew}"
+                app:layout_constraintStart_toEndOf="@id/starshipCrewLabel"
+                app:layout_constraintTop_toTopOf="@id/starshipCrewLabel"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginStart="8dp" />
+
+            <!-- Separator -->
+            <View
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:background="#CCCCCC"
+                app:layout_constraintTop_toBottomOf="@id/starshipCrewLabel"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginTop="30dp" />
+
+            <!-- Starship Passengers -->
+            <TextView
+                android:id="@+id/starshipPassengersLabel"
+                style="@style/LabelTextView"
+                android:text="Passengers:"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/starshipCrewLabel"
+                android:layout_marginTop="30dp" />
+
+            <TextView
+                android:id="@+id/starshipPassengers"
+                style="@style/StarshipValueTextView"
+                android:text="@{starship.passengers}"
+                app:layout_constraintStart_toEndOf="@id/starshipPassengersLabel"
+                app:layout_constraintTop_toTopOf="@id/starshipPassengersLabel"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginStart="8dp" />
+
+            <!-- Separator -->
+            <View
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:background="#CCCCCC"
+                app:layout_constraintTop_toBottomOf="@id/starshipPassengersLabel"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginTop="30dp" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
+</layout>

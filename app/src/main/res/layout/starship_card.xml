@@ -5,11 +5,11 @@
 
     <data>
         <variable
-            name="character"
-            type="com.example.star_wars.model.charactermodel.Character" />
+            name="starship"
+            type="com.example.star_wars.model.starshipmodel.Starship" />
         <variable
             name="action"
-            type="com.example.star_wars.characters.view.OnCharacterClickListener" />
+            type="com.example.star_wars.starships.view.OnStarshipClickListener" />
     </data>
 
     <androidx.cardview.widget.CardView
@@ -25,22 +25,22 @@
             android:layout_height="match_parent">
 
             <TextView
-                android:id="@+id/characterName"
+                android:id="@+id/starshipName"
                 style="@style/CharacterNameCardTextView"
-                android:text="@{character.name}"
+                android:text="@{starship.name}"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintStart_toStartOf="parent"/>
 
             <Button
-                android:id="@+id/moreDetailsBtn"
+                android:id="@+id/starshipMoreDetailsBtn"
                 style="@style/MoreDetailsButton"
                 android:text="@string/more_details"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/characterName"
-                android:onClick="@{()->action.onCardClick(character)}"/>
+                app:layout_constraintTop_toBottomOf="@+id/starshipName"
+                android:onClick="@{()->action.onCardClick(starship)}"/>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>

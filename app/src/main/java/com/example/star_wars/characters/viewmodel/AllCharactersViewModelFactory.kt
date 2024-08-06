@@ -2,7 +2,7 @@ package com.example.star_wars.characters.viewmodel
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
-import com.example.star_wars.model.ICharactersRepository
+import com.example.star_wars.model.charactermodel.ICharactersRepository
 
 class AllCharactersViewModelFactory(private val repo: ICharactersRepository):
     ViewModelProvider.Factory{

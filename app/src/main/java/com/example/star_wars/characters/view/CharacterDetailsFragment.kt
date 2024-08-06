@@ -8,7 +8,7 @@ import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import com.example.star_wars.R
 import com.example.star_wars.databinding.FragmentCharacterDetailsBinding
-import com.example.star_wars.model.Character
+import com.example.star_wars.model.charactermodel.Character
 
 
 class CharacterDetailsFragment : Fragment() {

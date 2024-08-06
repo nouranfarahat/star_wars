@@ -1,4 +1,4 @@
-package com.example.star_wars.model
+package com.example.star_wars.model.charactermodel
 
 import com.google.gson.annotations.SerializedName
 import java.io.Serializable

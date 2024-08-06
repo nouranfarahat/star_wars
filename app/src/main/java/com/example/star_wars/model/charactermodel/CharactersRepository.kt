@@ -1,20 +1,20 @@
-package com.example.star_wars.model
+package com.example.star_wars.model.charactermodel
 
 import android.util.Log
-import com.example.star_wars.network.IRemoteSource
+import com.example.star_wars.network.characternetwork.ICharactersRemoteSource
 import kotlinx.coroutines.flow.Flow
 
-class CharactersRepository(var remoteSource: IRemoteSource):ICharactersRepository {
+class CharactersRepository(var remoteSource: ICharactersRemoteSource): ICharactersRepository {
 
     companion object
     {
         private var instance: CharactersRepository?=null
         fun getInstance(
-            remoteSource: IRemoteSource,
+            remoteSource: ICharactersRemoteSource,
         ): CharactersRepository {
-            return instance?: synchronized(this){
+            return instance ?: synchronized(this){
                 val temp= CharactersRepository(remoteSource)
-                instance=temp
+                instance =temp
                 temp
             }
         }
@@ -31,8 +31,6 @@ class CharactersRepository(var remoteSource: IRemoteSource):ICharactersRepositor
         return remoteSource.getCharactersFromNetwork()
     }
 
-    override suspend fun getCharacterInfoResponseFromNetwork(id: Long): Flow<Character> {
-        return remoteSource.getCharacterInfoFromNetwork(id)
-    }
+
 
 }
