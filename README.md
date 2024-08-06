@@ -14,18 +14,20 @@ ViewBinding/DataBinding for UI binding and Navigation component to navigate betw
 - Handle network connectivity changes and provide feedback to the user.
 
 ## Screenshots
-![starshipInfo](https://github.com/user-attachments/assets/9c9f8fd0-5401-4dea-902e-16b8e6f1d28a)
-![characterInfo](https://github.com/user-attachments/assets/e31a3167-f119-4eb6-82e7-56bfa7e59284)
+![app icon](https://github.com/user-attachments/assets/6ef9141b-493f-4f1b-909d-ba16a53e2b0e)
 ![starshipsList](https://github.com/user-attachments/assets/40e466d7-cd3f-4a8b-a2e4-c764ae2174b9)
 ![charactersList](https://github.com/user-attachments/assets/90d0a371-a60f-4bcc-bbd1-f30902fdeece)
-![app icon](https://github.com/user-attachments/assets/6ef9141b-493f-4f1b-909d-ba16a53e2b0e)
+![characterInfo](https://github.com/user-attachments/assets/e31a3167-f119-4eb6-82e7-56bfa7e59284)
+![starshipInfo](https://github.com/user-attachments/assets/9c9f8fd0-5401-4dea-902e-16b8e6f1d28a)
 
-# Prerequisites
+
+
+## Prerequisites
 
 - Android Studio 4.1 or higher
 - Gradle 8.0 or higher
 - Android SDK 30 or higher
-# Steps to run the project
+## Steps to run the project
 Open the Project in Android Studio
 
 1.Open Android Studio.
