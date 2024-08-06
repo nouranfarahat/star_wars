@@ -1,15 +1,16 @@
 package com.example.star_wars.model
 
 import com.google.gson.annotations.SerializedName
+import java.io.Serializable
 
 data class Root(
     val count: Long,
     val next: String,
     val previous: Any?,
-    val results: List<Result>,
+    val results: List<Character>,
 )
 
-data class Result(
+data class Character(
     val name: String,
     val height: String,
     val mass: String,
@@ -30,4 +31,4 @@ data class Result(
     val created: String,
     val edited: String,
     val url: String,
-)
+): Serializable

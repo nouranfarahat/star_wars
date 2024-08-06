@@ -6,7 +6,7 @@
     <data>
         <variable
             name="character"
-            type="com.example.star_wars.model.Result" />
+            type="com.example.star_wars.model.Character" />
         <variable
             name="action"
             type="com.example.star_wars.characters.view.OnCharacterClickListener" />
@@ -31,7 +31,7 @@
             android:layout_marginTop="10dp"
             android:layout_marginBottom="16dp"
             android:gravity="center"
-            android:text="Nouran"
+            android:text="@{character.name}"
             android:textColor="#000000"
             android:textSize="16sp"
             android:textStyle="bold"
@@ -43,14 +43,16 @@
             android:id="@+id/moreDetailsBtn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="More Details"
+            android:text="@string/more_details"
             android:layout_marginTop="15dp"
             android:layout_marginStart="15dp"
             android:layout_marginEnd="15dp"
+            android:layout_marginBottom="10dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/characterName"/>
-        <!--android:onClick="@{()->action.onCardClick(character)}"-->
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/characterName"
+        android:onClick="@{()->action.onCardClick(character)}"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.cardview.widget.CardView>

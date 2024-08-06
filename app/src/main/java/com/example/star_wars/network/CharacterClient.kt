@@ -1,7 +1,8 @@
 package com.example.star_wars.network
 
 
-import com.example.star_wars.model.Result
+import android.util.Log
+import com.example.star_wars.model.Character
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
 
@@ -24,9 +25,19 @@ class CharacterClient:IRemoteSource {
     }
 
 
-    override suspend fun getCharacterFromNetwork(): Flow<List<Result>> =flow {
-        val characters = characterService.getAllCharacters().body()?: listOf()
+    override suspend fun getCharactersFromNetwork(): Flow<List<Character>> =flow {
+        val characters = characterService.getAllCharacters().body()?.results?: listOf()
+        Log.i("NET", "getCharactersFromNetwork: client ${characters.get(1).name}")
+
         emit(characters)
+    }
+
+    override suspend fun getCharacterInfoFromNetwork(id:Long): Flow<Character> =flow {
+        val character = characterService.getCharacterInfo(id).body()
+
+        if (character != null) {
+            emit(character)
+        }
     }
 
 

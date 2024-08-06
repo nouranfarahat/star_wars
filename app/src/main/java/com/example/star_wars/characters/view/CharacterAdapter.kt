@@ -8,10 +8,10 @@ import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.example.star_wars.R
 import com.example.star_wars.databinding.CharacterCardBinding
-import com.example.star_wars.model.Result
+import com.example.star_wars.model.Character
 
 class CharacterAdapter(var listener: OnCharacterClickListener)
-    : ListAdapter<Result, CharacterAdapter.ViewHolder>(CharacterDiffUtil()) {
+    : ListAdapter<Character, CharacterAdapter.ViewHolder>(CharacterDiffUtil()) {
 
     class ViewHolder(var characterBinding: CharacterCardBinding): RecyclerView.ViewHolder(characterBinding.root)
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -26,13 +26,13 @@ class CharacterAdapter(var listener: OnCharacterClickListener)
     }
 }
 
-class CharacterDiffUtil: DiffUtil.ItemCallback<Result>()
+class CharacterDiffUtil: DiffUtil.ItemCallback<Character>()
 {
-    override fun areItemsTheSame(oldItem: Result, newItem: Result): Boolean {
+    override fun areItemsTheSame(oldItem: Character, newItem: Character): Boolean {
         return oldItem.name==newItem.name
     }
 
-    override fun areContentsTheSame(oldItem: Result, newItem: Result): Boolean {
+    override fun areContentsTheSame(oldItem: Character, newItem: Character): Boolean {
 
         return oldItem==newItem
     }
