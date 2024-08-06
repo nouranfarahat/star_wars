@@ -21,10 +21,10 @@ class AllStarshipsViewModel(private val repo: IStarshipsRepository) : ViewModel(
 
     //When the object of viewModel is created fetchCharacters is called to present the recipe list to the user
     init {
-        fetchCharacters()
+        fetchStarships()
     }
 
-     private fun fetchCharacters() {
+     fun fetchStarships() {
         viewModelScope.launch(Dispatchers.IO) {
             repo.getStarshipsFromNetwork()
                 .catch {

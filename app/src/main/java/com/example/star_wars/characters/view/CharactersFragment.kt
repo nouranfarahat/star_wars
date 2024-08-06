@@ -81,7 +81,7 @@ class CharactersFragment : Fragment(), OnCharacterClickListener {
                     is ApiState.Failure -> {
                         allCharactersBinding.progressBar.visibility = View.GONE
                         withContext(Dispatchers.Main) {
-                            Snackbar.make(view, "No internet connection", Snackbar.LENGTH_LONG).show()
+                            getView()?.let { Snackbar.make(it, "No internet connection", Snackbar.LENGTH_LONG).show() }
                         }
                     }
                 }

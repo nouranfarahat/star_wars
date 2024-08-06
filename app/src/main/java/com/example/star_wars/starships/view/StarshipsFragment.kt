@@ -19,6 +19,8 @@ import com.example.star_wars.network.starshipnetwork.StarshipClient
 import com.example.star_wars.starships.viewmodel.AllStarshipsViewModel
 import com.example.star_wars.starships.viewmodel.AllStarshipsViewModelFactory
 import com.example.star_wars.utilities.ApiState
+import com.example.star_wars.utilities.NetworkCallbackHandler
+import com.google.android.material.snackbar.Snackbar
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
@@ -30,6 +32,8 @@ class StarshipsFragment : Fragment(),OnStarshipClickListener {
     lateinit var viewModel: AllStarshipsViewModel
     lateinit var starshipsViewModelFactory: AllStarshipsViewModelFactory
     lateinit var starshipAdapter: StarshipAdapter
+    lateinit var networkCallbackHandler: NetworkCallbackHandler
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
     }
@@ -51,7 +55,7 @@ class StarshipsFragment : Fragment(),OnStarshipClickListener {
         super.onViewCreated(view, savedInstanceState)
         starshipsViewModelFactory= AllStarshipsViewModelFactory(
             StarshipsRepository.getInstance(
-            StarshipClient.getInstance()))
+            StarshipClient.getInstance(),requireContext()))
         viewModel= ViewModelProvider(this,starshipsViewModelFactory).get(AllStarshipsViewModel::class.java)
 
         lifecycleScope.launch {
@@ -72,21 +76,28 @@ class StarshipsFragment : Fragment(),OnStarshipClickListener {
                         }
                     }
 
-                    else -> {
-                        allStarshipsBinding.progressBar.visibility=View.GONE
-                        withContext(Dispatchers.Main)
-                        {
-                            Toast.makeText(
-                                requireContext(),
-                                "Check your Connection",
-                                Toast.LENGTH_SHORT
-                            ).show()
+                    is ApiState.Failure -> {
+                        allStarshipsBinding.progressBar.visibility = View.GONE
+                        withContext(Dispatchers.Main) {
+                            getView()?.let { Snackbar.make(it, "No internet connection", Snackbar.LENGTH_LONG).show() }
                         }
-
-                    }                    }
+                    }
+                }
             }
         }
+        networkCallbackHandler = NetworkCallbackHandler(
+            requireContext(),
+            onNetworkAvailable = { viewModel.fetchStarships() }, // Retry fetching data when network is available
+            onNetworkLost = { /* Handle network lost if needed */ }
+        )
+        networkCallbackHandler.register()
     }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        networkCallbackHandler.unregister()
+    }
+
 
     override fun onCardClick(starship: Starship) {
         Toast.makeText(
