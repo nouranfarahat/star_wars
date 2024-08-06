@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".characters.view.CharacterDetailsFragment">
+
+    <data>
+        <variable
+            name="character"
+            type="com.example.star_wars.model.Character" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp">
+
+        <!-- Character Name -->
+        <TextView
+            android:id="@+id/characterName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{character.name}"
+            android:textColor="#000000"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginBottom="16dp" />
+
+        <!-- Character Height -->
+        <TextView
+            android:id="@+id/characterHeightLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Height:"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/characterName"
+            android:layout_marginTop="8dp" />
+
+        <TextView
+            android:id="@+id/characterHeight"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@{character.height}"
+            android:textSize="18sp"
+            app:layout_constraintStart_toEndOf="@id/characterHeightLabel"
+            app:layout_constraintTop_toTopOf="@id/characterHeightLabel"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginStart="8dp" />
+
+        <!-- Character Mass -->
+        <TextView
+            android:id="@+id/characterMassLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Mass:"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/characterHeightLabel"
+            android:layout_marginTop="8dp" />
+
+        <TextView
+            android:id="@+id/characterMass"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@{character.mass}"
+            android:textSize="18sp"
+            app:layout_constraintStart_toEndOf="@id/characterMassLabel"
+            app:layout_constraintTop_toTopOf="@id/characterMassLabel"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginStart="8dp" />
+
+        <!-- Character Hair Color -->
+        <TextView
+            android:id="@+id/characterHairColorLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Hair Color:"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/characterMassLabel"
+            android:layout_marginTop="8dp" />
+
+        <TextView
+            android:id="@+id/characterHairColor"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@{character.hairColor}"
+            android:textSize="18sp"
+            app:layout_constraintStart_toEndOf="@id/characterHairColorLabel"
+            app:layout_constraintTop_toTopOf="@id/characterHairColorLabel"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginStart="8dp" />
+
+        <!-- Character Skin Color -->
+        <TextView
+            android:id="@+id/characterSkinColorLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Skin Color:"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/characterHairColorLabel"
+            android:layout_marginTop="8dp" />
+
+        <TextView
+            android:id="@+id/characterSkinColor"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@{character.skinColor}"
+            android:textSize="18sp"
+            app:layout_constraintStart_toEndOf="@id/characterSkinColorLabel"
+            app:layout_constraintTop_toTopOf="@id/characterSkinColorLabel"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginStart="8dp" />
+
+        <!-- Character Eye Color -->
+        <TextView
+            android:id="@+id/characterEyeColorLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Eye Color:"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/characterSkinColorLabel"
+            android:layout_marginTop="8dp" />
+
+        <TextView
+            android:id="@+id/characterEyeColor"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@{character.eyeColor}"
+            android:textSize="18sp"
+            app:layout_constraintStart_toEndOf="@id/characterEyeColorLabel"
+            app:layout_constraintTop_toTopOf="@id/characterEyeColorLabel"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginStart="8dp" />
+
+        <!-- Character Birth Year -->
+        <TextView
+            android:id="@+id/characterBirthYearLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Birth Year:"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/characterEyeColorLabel"
+            android:layout_marginTop="8dp" />
+
+        <TextView
+            android:id="@+id/characterBirthYear"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@{character.birthYear}"
+            android:textSize="18sp"
+            app:layout_constraintStart_toEndOf="@id/characterBirthYearLabel"
+            app:layout_constraintTop_toTopOf="@id/characterBirthYearLabel"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginStart="8dp" />
+
+        <!-- Character Gender -->
+        <TextView
+            android:id="@+id/characterGenderLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Gender:"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/characterBirthYearLabel"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp" />
+
+        <TextView
+            android:id="@+id/characterGender"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@{character.gender}"
+            android:textSize="18sp"
+            app:layout_constraintStart_toEndOf="@id/characterGenderLabel"
+            app:layout_constraintTop_toTopOf="@id/characterGenderLabel"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginStart="8dp" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

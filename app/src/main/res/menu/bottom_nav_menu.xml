@@ -4,15 +4,15 @@
     <item
         android:id="@+id/charactersFragment"
         android:icon="@drawable/baseline_groups_24"
-        android:title="Characters" />
+        android:title="@string/characters" />
     <item
         android:id="@+id/starshipsFragment"
         android:icon="@drawable/baseline_rocket_launch_24"
-        android:title="Starships"/>
+        android:title="@string/starships"/>
     <item
         android:id="@+id/favoriteFragment"
         android:icon="@drawable/baseline_favorite_24"
-        android:title="Favorite" />
+        android:title="@string/favorite" />
 
     <!-- Add more items for other destinations in your NavGraph -->
 </menu>
