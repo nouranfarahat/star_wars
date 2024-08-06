@@ -16,7 +16,7 @@ class AllCharactersViewModel(private val repo: ICharactersRepository) : ViewMode
 
     //Backing property
     private var _characters = MutableStateFlow<ApiState<List<Character>>>(ApiState.Loading)
-    val recipes: StateFlow<ApiState<List<Character>>>
+    val characters: StateFlow<ApiState<List<Character>>>
         get() = _characters
 
     //When the object of viewModel is created fetchCharacters is called to present the recipe list to the user
@@ -24,19 +24,19 @@ class AllCharactersViewModel(private val repo: ICharactersRepository) : ViewMode
         fetchCharacters()
     }
 
-     private fun fetchCharacters() {
+     fun fetchCharacters() {
         viewModelScope.launch(Dispatchers.IO) {
             repo.getCharactersFromNetwork()
                 .catch {
 
                     error->_characters.value=ApiState.Failure(error)
-                    Log.i("MUT", "fetchRecipes: viewmodel error")
+                    Log.e("ViewModel", "fetchCharacters: ${error.message}", error)
 
                 }
                 .collect{
                     data->_characters.value=ApiState.Success(data)
                     //check if the data arrived here
-                    Log.i("MUT", "fetchRecipes: viewmodel ${data.get(0).name}")
+                    Log.i("ViewModel", "fetchCharacters: ${data[0].name}")
                 }
 
 

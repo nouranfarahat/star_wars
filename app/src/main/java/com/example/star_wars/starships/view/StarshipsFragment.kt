@@ -55,7 +55,7 @@ class StarshipsFragment : Fragment(),OnStarshipClickListener {
         viewModel= ViewModelProvider(this,starshipsViewModelFactory).get(AllStarshipsViewModel::class.java)
 
         lifecycleScope.launch {
-            viewModel.recipes.collect { result ->
+            viewModel.starships.collect { result ->
                 when (result ) {
                     is ApiState.Success-> {
                         allStarshipsBinding.apply {

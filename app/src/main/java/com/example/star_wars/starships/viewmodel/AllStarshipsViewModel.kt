@@ -16,7 +16,7 @@ class AllStarshipsViewModel(private val repo: IStarshipsRepository) : ViewModel(
 
     //Backing property
     private var _starships = MutableStateFlow<ApiState<List<Starship>>>(ApiState.Loading)
-    val recipes: StateFlow<ApiState<List<Starship>>>
+    val starships: StateFlow<ApiState<List<Starship>>>
         get() = _starships
 
     //When the object of viewModel is created fetchCharacters is called to present the recipe list to the user
