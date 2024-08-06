@@ -14,9 +14,9 @@ import com.example.star_wars.R
 import com.example.star_wars.characters.viewmodel.AllCharactersViewModel
 import com.example.star_wars.characters.viewmodel.AllCharactersViewModelFactory
 import com.example.star_wars.databinding.FragmentCharactersBinding
-import com.example.star_wars.model.CharactersRepository
-import com.example.star_wars.model.Character
-import com.example.star_wars.network.CharacterClient
+import com.example.star_wars.model.charactermodel.CharactersRepository
+import com.example.star_wars.model.charactermodel.Character
+import com.example.star_wars.network.characternetwork.CharacterClient
 import com.example.star_wars.utilities.ApiState
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -50,7 +50,9 @@ class CharactersFragment : Fragment(),OnCharacterClickListener {
     }
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        charactersFactory= AllCharactersViewModelFactory(CharactersRepository.getInstance(CharacterClient.getInstance()))
+        charactersFactory= AllCharactersViewModelFactory(
+            CharactersRepository.getInstance(
+            CharacterClient.getInstance()))
         viewModel= ViewModelProvider(this,charactersFactory).get(AllCharactersViewModel::class.java)
 
         lifecycleScope.launch {

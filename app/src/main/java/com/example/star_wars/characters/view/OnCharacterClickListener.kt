@@ -1,6 +1,6 @@
 package com.example.star_wars.characters.view
 
-import com.example.star_wars.model.Character
+import com.example.star_wars.model.charactermodel.Character
 
 
 //This interface to handle any clicks in the future

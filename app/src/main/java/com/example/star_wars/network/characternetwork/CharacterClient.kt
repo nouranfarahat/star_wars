@@ -1,23 +1,24 @@
-package com.example.star_wars.network
+package com.example.star_wars.network.characternetwork
 
 
 import android.util.Log
-import com.example.star_wars.model.Character
+import com.example.star_wars.model.charactermodel.Character
+import com.example.star_wars.network.RetrofitHelper
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
 
-class CharacterClient:IRemoteSource {
+class CharacterClient: ICharactersRemoteSource {
 
-    val characterService:ICharacterService by lazy {
+    val characterService: ICharacterService by lazy {
         RetrofitHelper.retrofitInstance.create(ICharacterService::class.java)
     }
     companion object
     {
-        private var instance:CharacterClient?=null
+        private var instance: CharacterClient?=null
         fun getInstance(): CharacterClient {
-            return instance?: synchronized(this){
-                val temp=CharacterClient()
-                instance=temp
+            return instance ?: synchronized(this){
+                val temp= CharacterClient()
+                instance =temp
                 temp
             }
         }

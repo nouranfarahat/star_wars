@@ -18,7 +18,11 @@
         android:id="@+id/starshipsFragment"
         android:name="com.example.star_wars.starships.view.StarshipsFragment"
         android:label="fragment_starships"
-        tools:layout="@layout/fragment_starships" />
+        tools:layout="@layout/fragment_starships" >
+        <action
+            android:id="@+id/action_starshipsFragment_to_starshipDetailsFragment"
+            app:destination="@id/starshipDetailsFragment" />
+    </fragment>
     <fragment
         android:id="@+id/characterDetailsFragment"
         android:name="com.example.star_wars.characters.view.CharacterDetailsFragment"
@@ -26,6 +30,14 @@
         tools:layout="@layout/fragment_character_details" >
         <argument
             android:name="character_details"
-            app:argType="com.example.star_wars.model.Character" />
+            app:argType="com.example.star_wars.model.charactermodel.Character" />
+    </fragment>
+    <fragment
+        android:id="@+id/starshipDetailsFragment"
+        android:name="com.example.star_wars.starships.view.StarshipDetailsFragment"
+        android:label="StarshipDetailsFragment" >
+        <argument
+            android:name="starship_details"
+            app:argType="com.example.star_wars.model.starshipmodel.Starship" />
     </fragment>
 </navigation>
